@@ -1,0 +1,19 @@
+body {
+    background: black;
+    color: white;
+}
+
+.btn-primary {
+    border: none;
+    border-radius: 8px;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.carrd {
+    transition: transform 0.3s ease;
+}
+
+.carrd:hover {
+    transform: translateY(-3px);
+}
