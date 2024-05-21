@@ -13,6 +13,13 @@ firebase.initializeApp(firebaseConfig);
 const store = firebase.firestore();
 const analytics = firebase.analytics();
 
+// Function to format Firestore Timestamp to readable string
+function formatTimestamp(timestamp) {
+    // Firestore Timestamp object to JavaScript Date object
+    const date = timestamp.toDate();
+    return date.toLocaleString();  // Convert to locale string for readable format
+}
+
 const loadingPosts = 5;
 let lastVisiblePost = null;
 let morePostsAvailable = true;
@@ -32,9 +39,10 @@ window.onload = function() {
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
+                    const formattedTimestamp = formatTimestamp(doc.data().update);
                     titleContainer.innerHTML = `<h1>${doc.data().title}</h1>`;  
                     buttonContainer.innerHTML = `<button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>`;
-                    postContainer.innerHTML = `<p style="font-size: 10px; position: absolute; top: 52px; left: 32px;" title="${doc.data().update}">${doc.data().update}</p>${doc.data().content}`;
+                    postContainer.innerHTML = `<p style="font-size: 10px; position: absolute; top: 52px; left: 32px;" title="${formattedTimestamp}">${formattedTimestamp}</p>${doc.data().content}`;
             });
         })
     }
@@ -67,12 +75,13 @@ function getPosts() {
 }
 
 function addPostToPage(post) {
+    const formattedTimestamp = formatTimestamp(post.update);
     var postElement = `
     <br>
     <div style="border: 2px solid;" class="carrd ${post.path}">
         <div style="position: relative;">
             <h3 style="cursor: default; position: relative; left: 10px;">${post.title}</h3>
-            <p style="font-size: 10px; position: absolute; top: -10px; right: 29px;">${post.update}</p>
+            <p style="font-size: 10px; position: absolute; top: -10px; right: 29px;">${formattedTimestamp}</p>
         </div>
         <button style="width: 100%; border: none; border-radius: 10px 10px 0px 0px; background-color: #5667c7; text-transform: uppercase; cursor: pointer;" class="primary-text" onclick="location.href='/?entry=${post.path}';">read</button>
     </div>
