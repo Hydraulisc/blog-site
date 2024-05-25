@@ -61,10 +61,10 @@ function getPosts() {
         // Check if there are more posts available to load
         if (snapshot.size < loadingPosts) {
             morePostsAvailable = false;
-document.getElementById("loadMore").disabled = 'true';
+            document.getElementById("buttons").innerHTML = `<p><span style="color: gray !important;"><i>There are <span style="text-decoration: underline !important;">no more</span> entries to load!</i></span></p>`;
         } else {
-document.getElementById("loadMore").disabled = 'false';
-}
+            document.getElementById("loadMore").disabled = false;
+        }
         var posts = snapshot.docs.map(function(post) {
             return post.data();
         });
@@ -84,7 +84,7 @@ function addPostToPage(post) {
     <div style="border: 2px solid;" class="carrd ${post.path}">
         <div style="position: relative;">
             <h3 style="cursor: default; position: relative; left: 10px;">${post.title}</h3>
-            <p style="font-size: 10px; position: absolute; top: -10px; right: 29px;">${formattedTimestamp}</p>
+            <p style="font-size: 10px; position: absolute; top: -22px; right: 29px;">${formattedTimestamp}</p>
         </div>
         <button style="width: 100%; border: none; border-radius: 10px 10px 0px 0px; background-color: #5667c7; text-transform: uppercase; cursor: pointer;" class="primary-text" onclick="location.href='/?entry=${post.path}';">read</button>
     </div>
