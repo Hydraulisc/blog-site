@@ -31,8 +31,8 @@ window.onload = function() {
     const buttonContainer = document.getElementById("buttons");
     const postContainer = document.getElementById("bodycontainer");
     if(!entryID){
-        titleContainer.innerHTML = `<h1 style="color: #5667c7 !important;">The <span style="text-decoration: underline !important;">Hydraulisc</span> Blog</h1>`;
-        buttonContainer.innerHTML = `<button id="loadMore" class="btn-primary primary-text">Load More</button>`;
+        titleContainer.innerHTML = `<h1 style="color: #5667c7 !important;"><span style="text-decoration: underline !important;">Hydraulisc</span> Developers Digest</h1>`;
+        buttonContainer.innerHTML = `<button id="loadMore" class="btn-primary primary-text" disabled>Load More</button>`;
         getPosts();
     } else {
         store.collection("entries").where("path", "==", entryID)
@@ -61,7 +61,10 @@ function getPosts() {
         // Check if there are more posts available to load
         if (snapshot.size < loadingPosts) {
             morePostsAvailable = false;
-        }
+document.getElementById("loadMore").disabled = 'true';
+        } else {
+document.getElementById("loadMore").disabled = 'false';
+}
         var posts = snapshot.docs.map(function(post) {
             return post.data();
         });
