@@ -1,4 +1,4 @@
-# [Blog](https://blog.hydraulisc.xyz) (part of the "Blogger" project) <!-- TO-DO: Insert Definitons links -->
+# [Blog](https://blog.hydraulisc.xyz) (part of the ["Blogger" project](https://github.com/Hydraulisc/Blogger))
 
 ## What's This?
 
