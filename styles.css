@@ -8,6 +8,14 @@ body {
     border-radius: 8px;
     padding: .5rem;
     cursor: pointer;
+    background-color: #5667c7;
+    color: #d7d9e0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.primary-text {
+    color: #d7d9e0;
 }
 
 .carrd {
@@ -16,4 +24,8 @@ body {
 
 .carrd:hover {
     transform: translateY(-3px);
+}
+
+#title {
+    margin-top: 3rem;
 }

@@ -42,7 +42,7 @@ window.onload = function() {
                     const formattedTimestamp = formatTimestamp(doc.data().update);
                     titleContainer.innerHTML = `<h1>${doc.data().title}</h1>`;  
                     buttonContainer.innerHTML = `<button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>`;
-                    postContainer.innerHTML = `<p style="font-size: 10px; position: absolute; top: 52px; left: 32px;" title="${formattedTimestamp}">${formattedTimestamp}</p>${doc.data().content}`;
+                    postContainer.innerHTML = `<p  style="font-size: small; position: absolute; top: 11px; left: 32px; color: #d7d9e0;" title="${formattedTimestamp}">${formattedTimestamp}</p>${doc.data().content}`;
             });
         })
     }
@@ -81,13 +81,15 @@ function addPostToPage(post) {
     const formattedTimestamp = formatTimestamp(post.update);
     var postElement = `
     <br>
-    <div style="border: 2px solid;" class="carrd ${post.path}">
-        <div style="position: relative;">
-            <h3 style="cursor: default; position: relative; left: 10px;">${post.title}</h3>
-            <p style="font-size: 10px; position: absolute; top: -22px; right: 29px;">${formattedTimestamp}</p>
+    <a style="color: #d7d9e0;" href="/?entry=${post.path}">
+        <div style="border: 2px solid;" class="carrd ${post.path}">
+            <div style="position: relative;">
+                <h3 style="cursor: default; position: relative; left: 10px;">${post.title}</h3>
+                <p style="font-size: 10px; position: absolute; top: -22px; right: 29px;">${formattedTimestamp}</p>
+            </div>
+            <button style="width: 100%; border: none; border-radius: 10px 10px 0px 0px; background-color: #5667c7; text-transform: uppercase; cursor: pointer; font-weight: 600;" class="primary-text">read</button>
         </div>
-        <button style="width: 100%; border: none; border-radius: 10px 10px 0px 0px; background-color: #5667c7; text-transform: uppercase; cursor: pointer;" class="primary-text" onclick="location.href='/?entry=${post.path}';">read</button>
-    </div>
+    </a>
   `;
   document.getElementById("entries").innerHTML += postElement;
 };
