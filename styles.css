@@ -24,9 +24,20 @@ body {
 
 .carrd:hover {
     transform: translateY(-3px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 5px 5px 25px 1px rgba(255, 255, 255, 0.4);
 }
 
 #title {
     margin-top: 3rem;
+    animation: crtFlicker 0.8s linear 2;
+}
+
+@keyframes crtFlicker {
+    0% { opacity: 0.8; }
+    5% { opacity: 0.3; }
+    10% { opacity: 1; }
+    15% { opacity: 0.6; }
+    20% { opacity: 1; }
+    100% { opacity: 1; }
 }

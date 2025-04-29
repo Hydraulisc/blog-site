@@ -1,10 +1,10 @@
-# [Blog](https://blog.hydraulisc.xyz) (part of the ["Blogger" project](https://github.com/Hydraulisc/Blogger))
+# [Blog](https://blog.hydraulisc.net) (part of the ["Blogger" project](https://github.com/Hydraulisc/Blogger))
 
 ## What's This?
 
-This is the official [Hydraulisc Blog Site](https://blog.hydraulisc.xyz).
+This is the official [Hydraulisc Blog Site](https://blog.hydraulisc.net).
 
-This site reads data from a Firebase Firestore and displays it in a not-so-fancy way.
+This site reads data from a Firebase Firestore and displays it in a not-so-fancy way. Oh, and it's got a retro theme going, too.
 
 Largely inspired by [TallerThanShort's Blog](https://tallerthanshort.is-a.dev/blog).
 
