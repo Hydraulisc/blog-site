@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+a {
+    color: #5667c7;
+}
+
 .btn-primary {
     border: none;
     border-radius: 8px;
@@ -31,6 +35,33 @@ body {
 #title {
     margin-top: 3rem;
     animation: crtFlicker 0.8s linear 2;
+}
+
+.gridMe {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gridItem {
+    padding: 1rem;
+    background-color: #100E09;
+    overflow: hidden;
+    position: relative;
+}
+
+.gridSelected {
+    border: 1.5px solid transparent;
+    border-image: linear-gradient(90deg, #5464c7, #ff5c5c, #00ffa3);
+    border-image-slice: 1;
+    animation: gradientShift 6s linear infinite;
+}
+
+@keyframes gradientShift {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 @keyframes crtFlicker {
