@@ -59,6 +59,12 @@ a {
     animation: gradientShift 6s linear infinite;
 }
 
+@media screen and (min-width: 768px) {
+  .gridMe {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @keyframes gradientShift {
     0%   { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
