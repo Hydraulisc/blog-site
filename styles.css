@@ -1,10 +1,17 @@
+@import url('https://fonts.cdnfonts.com/css/freeroad');
+
 body {
     background: black;
     color: white;
+    font-family: 'Freeroad', sans-serif;
 }
 
 a {
     color: #5667c7;
+}
+
+h1, h3 {
+    font-family: initial;
 }
 
 .btn-primary {
@@ -34,7 +41,7 @@ a {
 
 #title {
     margin-top: 3rem;
-    animation: crtFlicker 0.8s linear 2;
+    animation: crtFlicker 0.8s linear 1;
 }
 
 .gridMe {
