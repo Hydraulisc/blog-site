@@ -1,107 +1,56 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyDV4JvWqDdFWJjcH9DGopZxeIeHTtsDTEA",
-    authDomain: "hydraul-blog.firebaseapp.com",
-    projectId: "hydraul-blog",
-    storageBucket: "hydraul-blog.appspot.com",
-    messagingSenderId: "18958256761",
-    appId: "1:18958256761:web:6d0081cb0a671e62f562a8",
-    measurementId: "G-9N109WZ5NJ"
-};
+const entriesLocator = document.getElementById("entries");
 
-
-firebase.initializeApp(firebaseConfig);
-const store = firebase.firestore();
-const analytics = firebase.analytics();
-
-// Function to format Firestore Timestamp to readable string
-function formatTimestamp(timestamp) {
-    // Firestore Timestamp object to JavaScript Date object
-    const date = timestamp.toDate();
-    return date.toLocaleString();  // Convert to locale string for readable format
-}
-
-const loadingPosts = 5;
-let lastVisiblePost = null;
-let morePostsAvailable = true;
-
-window.onload = function() {
-    const entryLocator = new URLSearchParams(window.location.search.slice(1));
-    const entryID = entryLocator.get('entry');
-    const titleContainer = document.getElementById("title");
-    const buttonContainer = document.getElementById("buttons");
-    const postContainer = document.getElementById("bodycontainer");
-    if(!entryID){
-        titleContainer.innerHTML = `<h1 style="color: #5667c7 !important;"><span style="text-decoration: underline !important;">Hydraulisc</span> Developers Digest</h1>`;
-        buttonContainer.innerHTML = `<button id="loadMore" class="btn-primary primary-text" disabled>Load More</button>`;
-        getPosts();
-    } else {
-        store.collection("entries").where("path", "==", entryID)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    const formattedTimestamp = formatTimestamp(doc.data().update);
-                    titleContainer.innerHTML = `<h1>${doc.data().title}</h1>`;  
-                    buttonContainer.innerHTML = `<button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>`;
-                    postContainer.innerHTML = `<p  style="font-size: small; position: absolute; top: 11px; left: 32px; color: #d7d9e0;" title="${formattedTimestamp}">${formattedTimestamp}</p>${doc.data().content}`;
-            });
-        })
-    }
-}
-
-
-function getPosts() {
-    const postsRef = firebase.firestore().collection('entries');
-    let query = postsRef.orderBy('pnum', 'desc').limit(loadingPosts);
-
-    if (lastVisiblePost) {
-        query = query.startAfter(lastVisiblePost);
-    }
-
-    query.onSnapshot(function(snapshot) {
-        // Check if there are more posts available to load
-        if (snapshot.size < loadingPosts) {
-            morePostsAvailable = false;
-            document.getElementById("buttons").innerHTML = `<p><span style="color: gray !important;"><i>There are <span style="text-decoration: underline !important;">no more</span> entries to load!</i></span></p>`;
-        } else {
-            document.getElementById("loadMore").disabled = false;
+async function populatePosts() {
+    try {
+        const response = await fetch(`http://127.0.0.1:5500/blog/index.json`, {
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        if(!response.ok) {
+            throw new Error('HTTP Error! Status: ' + response.status);
         }
-        var posts = snapshot.docs.map(function(post) {
-            return post.data();
-        });
-
-        posts.forEach(function(post) {
-            addPostToPage(post);
-        });
-
-        lastVisiblePost = snapshot.docs[snapshot.docs.length - 1];
-    });
+        return await response.json();
+    } catch(error) {
+        console.log(error);
+        return null;
+    }
 }
 
-function addPostToPage(post) {
-    const formattedTimestamp = formatTimestamp(post.update);
-    var postElement = `
-    <br>
-    <a style="color: #d7d9e0;" href="/?entry=${post.path}">
-        <div style="border: 2px solid;" class="carrd ${post.path}">
-            <div style="position: relative;">
-                <h3 style="cursor: default; position: relative; left: 10px;">${post.title}</h3>
-                <p style="font-size: 10px; position: absolute; top: -22px; right: 29px;">${formattedTimestamp}</p>
+populatePosts().then(data => {
+    if (!data || !Array.isArray(data) || data.length === 0) {
+        entriesLocator.innerHTML = '<p>No posts found.</p>';
+        return;
+    }
+
+    // Sort newest first (hopefully ISO date-friendly)
+    const bogoSort = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    entriesLocator.innerHTML = bogoSort.map(post => {
+        const title = escapeHtml(post.title || post.id || 'Untitled');
+        const url = post.url || ('/blog/' + encodeURIComponent(post.id || ''));
+        return `
+        <br>
+        <a href="${url}.html">
+            <div class="carrd primary-text">
+                <div style="position: relative;">
+                    <p style="font-size: 10px; position: absolute; top: -20px; right: 12px;">${post.date}</p>
+                    <h3>${title}</h3>
+                </div>
+                <button class="primary-text">read</button>
             </div>
-            <button style="width: 100%; border: none; border-radius: 10px 10px 0px 0px; background-color: #5667c7; text-transform: uppercase; cursor: pointer; font-weight: 600;" class="primary-text">read</button>
-        </div>
-    </a>
-  `;
-  document.getElementById("entries").innerHTML += postElement;
-};
-
-document.addEventListener('click', (e) => {
-    let element = e.target;
-    if(morePostsAvailable){
-        if(element.id == 'loadMore'){
-            getPosts();
-        }
-    } else {
-        return;   
-    }
+        </a>
+        `;
+    }).join('\n');
 
 })
+
+// small helper to avoid XSS when inserting strings
+function escapeHtml(str) {
+return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}

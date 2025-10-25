@@ -1,17 +1,35 @@
-@import url('https://fonts.cdnfonts.com/css/freeroad');
+@import url('https://fonts.cdnfonts.com/css/tasa-explorer');
+@import url('https://fonts.cdnfonts.com/css/sometype-mono');
 
 body {
     background: black;
     color: white;
-    font-family: 'Freeroad', sans-serif;
+    font-family: 'TASA Explorer', sans-serif;
+    padding-top: 6.6rem;
 }
 
 a {
     color: #5667c7;
+    text-decoration: none;
 }
 
-h1, h3 {
-    font-family: initial;
+h1, h2, h3, .mono {
+    font-family: 'Sometype Mono', sans-serif;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.stickyHeader {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(16, 14, 9, 0.3));
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #5464c7;
 }
 
 .btn-primary {
@@ -19,7 +37,7 @@ h1, h3 {
     border-radius: 8px;
     padding: .5rem;
     cursor: pointer;
-    background-color: #5667c7;
+    background-color: #5464c7;
     color: #d7d9e0;
     text-transform: uppercase;
     font-weight: 600;
@@ -30,18 +48,36 @@ h1, h3 {
 }
 
 .carrd {
+    border: 2px solid #d7d9e0;
     transition: transform 0.3s ease;
+}
+
+.carrd h3 {
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+    text-transform: capitalize;
+}
+
+.carrd button {
+    width: 100%;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #5667c7;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600
 }
 
 .carrd:hover {
     transform: translateY(-3px);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 5px 5px 25px 1px rgba(255, 255, 255, 0.4);
+    animation: breathe 3s ease-in-out infinite;
 }
 
 #title {
-    margin-top: 3rem;
-    animation: crtFlicker 0.8s linear 1;
+    color: #5464c7;
+    margin-top: 2.5rem;
+    animation: crtFlicker 1s linear 1;
 }
 
 .gridMe {
@@ -66,6 +102,23 @@ h1, h3 {
     animation: gradientShift 6s linear infinite;
 }
 
+.footer {
+    margin-top: 2.2rem;
+}
+
+.footer a {
+    color: #d7d9e0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
   .gridMe {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -84,4 +137,9 @@ h1, h3 {
     15% { opacity: 0.6; }
     20% { opacity: 1; }
     100% { opacity: 1; }
+}
+
+@keyframes breathe {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+    50% { box-shadow: 5px 5px 25px 1px rgba(255, 255, 255, 0.4); }
 }

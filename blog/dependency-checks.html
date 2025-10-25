@@ -1,0 +1,51 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Dependency Checks</h1>
+            </div>
+        </div>
+    </header>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>Welcome to another Developers Digest.</p>
+        <p>Today's topic: <b>Dependencies</b>.</p>
+        <p>As many of you should know, projects like <a href="https://hydraulisc.net/welcome" target="_blank">Hydraulisc</a> require dependencies to run smoothly.</p>
+        <p>Recently, we had to do a lot of security patches; mainly due to <a href="https://securityvulnerability.io/vulnerability/CVE-2025-48387" target="_blank">CVE-2025-48387</a>, which affected <a href="https://www.npmjs.com/package/tar-fs" target="_blank">tar-fs</a>.</p>
+        <p>Also, appreciating the opportunity to mention subtle changes, we've updated <a href="https://github.com/hydraulisc/blogger" target="_blank">Blogger</a>, cleaned the code a bit, and updated to a more recent version of the Firebase JS SDK.</p>
+        <p>We've also recently introduced a new member to the Dev Team; <a href="https://github.com/Arkarivs" target="_blank">Arkarivs</a>, a Spanish developer who's helping make <a href="https://github.com/hydraulisc/foss-starplace" target="_blank">StarPlace</a>.</p>
+    </div>
+    <div style="border-left: 2px solid #5667c7; border-radius: 12px 0 0 12px; padding: 2px 12px;">
+        <h2>Important update (<span title="2025-10-21">2025-10-21</span>):</h2>
+        <p>As of <a href="https://github.com/Hydraulisc/blogger/commit/938f12ca3b5713b466e27f4a4158655ca07bd002" target="_blank" rel="noopener noreferrer">this commit</a>, Blogger has been updated even further, due to Google limiting Firestore databases to 1MB and removing <b>all</b> free storage from Firebase.</p>
+        <p>This new update to Blogger allowed us to make the migration from a Firebase Firestore to a GitHub-Native blog.</p>
+    </div>
+    <div id="entries"></div>
+    <br>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>

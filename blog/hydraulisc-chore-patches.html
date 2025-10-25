@@ -1,0 +1,77 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Hydraulisc Chore Patches</h1>
+            </div>
+        </div>
+    </header>
+    <div style="border-left: 2px solid #5667c7; border-radius: 12px 0 0 12px; padding: 2px 12px;">
+        <h2>Important update (<span title="2025-10-21">2025-10-21</span>):</h2>
+        <p>This blog entry is considered <span style="font-weight: 700; text-decoration: underline; text-transform: uppercase;">stale</span>. It has been reuploaded with the blog reworks for archiving purposes.</p>
+        <p>Also, can I (Ami) be the first to say that looking back at this post, I have no idea why it exists.</p>
+    </div>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>Welcome back to another Hydraulisc Developers Digest.</p>
+        <p>Today's entry targets commit <a href="https://github.com/Hydraulisc/hydraulisc-app/commit/74007f4103f175aa3e4744bcf447b252e471e1e9" target="_blank">74007f4</a> - a commit of type <a href="https://about.hydraulisc.net/help/articles/101010/" target="_blank">CHORE</a>, a <a href="https://about.hydraulisc.net/help/articles/101010/" target="_blank">PATCH</a> which requires a hasty review, and possibly impactful, change.</p>
+        <p>To ensure Hydraulisc can provide the best quality of service for the most extended period of time, we do these regular maintenance checks, updating and fixing packages, conflicts and any impactful bugs.</p>
+        <hr>
+        <pre>
+```
+Commit <a href="https://github.com/Hydraulisc/hydraulisc-app/commit/74007f4103f175aa3e4744bcf447b252e471e1e9" target="_blank">74007f4</a>: CHORE: Bump Dependencies - <a href="https://github.com/SleepingAmi" target="_blank">SleepingAmi</a> (<a title="@SleepingAmi#0001" href="https://hydraulisc.net/user/MupH0078JgXlk3TDZ5L6Wsaz2mf1">@SleepingAmi</a>)
+
+@grpc/grpc-js can allocate memory for incoming messages well above configured limits - <a title="GHSA-7v5v-9h63-cj86" href="https://github.com/advisories/GHSA-7v5v-9h63-cj86">GHSA-7v5v-9h63-cj86</a>
+
+body-parser vulnerable to denial of service when url encoding is enabled - <a title="GHSA-qwcr-r2fm-qrc7" href="https://github.com/advisories/GHSA-qwcr-r2fm-qrc7">GHSA-qwcr-r2fm-qrc7</a>
+
+Uncontrolled resource consumption in braces - <a title="GHSA-grv7-fg5c-xmjg" href="https://github.com/advisories/GHSA-grv7-fg5c-xmjg">GHSA-grv7-fg5c-xmjg</a>
+
+cookie accepts cookie name, path, and domain with out of bounds characters - <a title="GHSA-pxg6-pf52-xh8x" href="https://github.com/advisories/GHSA-pxg6-pf52-xh8x">GHSA-pxg6-pf52-xh8x</a>
+
+DOMPurify allows tampering by prototype pollution - <a title="GHSA-mmhx-hmjr-r674" href="https://github.com/advisories/GHSA-mmhx-hmjr-r674">GHSA-mmhx-hmjr-r674</a>
+
+DOMpurify has a nesting-based mXSS - <a title="GHSA-gx9m-whjm-85jf" href="https://github.com/advisories/GHSA-gx9m-whjm-85jf">GHSA-gx9m-whjm-85jf</a>
+
+ejs lacks certain pollution protection - <a title="GHSA-ghr5-ch3p-vcr6" href="https://github.com/advisories/GHSA-ghr5-ch3p-vcr6">GHSA-ghr5-ch3p-vcr6</a>
+
+path-to-regexp outputs backtracking regular expressions - <a title="GHSA-9wv6-86v2-598j" href="https://github.com/advisories/GHSA-9wv6-86v2-598j">GHSA-9wv6-86v2-598j</a>
+
+send vulnerable to template injection that can lead to XSS - <a title="GHSA-m6fv-jmcg-4jfg" href="https://github.com/advisories/GHSA-m6fv-jmcg-4jfg">GHSA-m6fv-jmcg-4jfg</a>
+
+ws affected by a DoS when handling a request with many HTTP headers - <a title="GHSA-3h5v-q93c-6h6q" href="https://github.com/advisories/GHSA-3h5v-q93c-6h6q">GHSA-3h5v-q93c-6h6q</a>
+
+FIX: Missing Cookie Attributes on /api/v4<br>
+```
+
+        </pre>
+    </div>
+    <hr>
+    <br>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>

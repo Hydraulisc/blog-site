@@ -1,9 +1,8 @@
 ---
 layout: none
 ---
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +10,10 @@ layout: none
     <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
     <meta property="og:site_name" content="Developers Digest - Hydraulisc">
-    <meta property="og:description" content="Updates from the Hydraulisc Developers Digest">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
     <meta property="og:title" content="Blog | Hydraulisc">
     <title>Hydraulisc Devlopers Digest</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
 </head>
 <body class="background-primary primary-text">
     <header id="stickyHeader" class="stickyHeader">
@@ -23,15 +22,23 @@ layout: none
         </a>
         <div style="text-align: center;">
             <div id="title">
-                <h1><span class="underline">Hydraulisc</span> Developers Digest</h1>
+                <h1>Incident DT-0002 (Power Grid Outage)</h1>
             </div>
         </div>
     </header>
-    <div id="entries"></div>
-
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>On the 28th of April, 2025, the main Hydraulisc infrastructure experienced an unexpected outage lasting approximately eleven hours. This incident was caused by an unprecedented electrical fault at the grid level, beyond anyone's direct control.</p>
+        <br>
+        <p>Both UPS systems failed to detect the instability, and didn't issue a shutdown command in time, but luckily, no data loss or corruption appears to have occurred. However, one UPS battery was damaged during the event, and we're currently working through the insurance process to resolve the hardware damages.</p>
+        <br>
+        <p>Since the last entry (<a href="https://blog.hydraulisc.net/blog/incident-dt-0001">DT-0001</a>), hardware has changed; now running 2*1000W UPS - one for each server.</p>
+        <br>
+        <p></p>
+    </div>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
     {% include noscript.html %}
     {% include footer.html %}
-
-    <script src="script.js" defer></script>
 </body>
 </html>

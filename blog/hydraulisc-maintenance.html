@@ -1,0 +1,68 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Hydraulisc Maintenance</h1>
+            </div>
+        </div>
+    </header>
+    <div style="border-left: 2px solid #5667c7; border-radius: 12px 0 0 12px; padding: 2px 12px;">
+        <h2>Important update (<span title="2025-10-21">2025-10-22</span>):</h2>
+        <p>The "long and tedious meeting" mentioned below involved the Lead Dev Team; four people in vastly different timezones, discussing (over VoIP, over various days) the future of The Hydraulisc Network.</p>
+        <p>"stopping the process keeping it alive" makes no sense; likely refers to killing the pm2 daemon? Also, "the indefinite end of Hydraulisc" is misleading. It's more of a "rebirth".</p>
+        <p>Images added here were added on the date this notice was written, replacing previous "insert image here" comments.</p>
+    </div>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>Welcome to another Developers Digest.</p>
+        <p>This time featuring: <b>the indefinite end of Hydraulisc</b>.</p>
+        <br>
+        <p>Hydraulisc has come a long way from it's origin</p>
+        <div style="width: 70svw; margin-left: auto; margin-right: auto;">
+            <img src="https://hydraulisc.net/uploads/8e33af1f83cdf8121c588c0e8fcafbf7" alt="Hydraulisc Client before/after" style="max-width: 70svw;">
+            <p style="font-size: 10px; text-align: end;">Image Source: <a href="https://hydraulisc.net/user/2" target="_blank" rel="noopener noreferrer">@sooox#0001</a>.</p>
+        </div>
+        <p>From a measely crash-prone single-threaded pile of hot trash, to a... less crash-prone multi-threaded pile of hot trash...</p>
+        <br>
+        <p>For those just joining, <a href="https://hydraulisc.net" target="_blank">Hydraulisc</a> is a Free and Open, Social Image Sharing Network <sub><i>Like no other :)</i></sub></p>
+        <br>
+        <p>Hydraulisc has fallen into disrepair, after many, many dependencies which Hydraulisc's dependencies depend on, have fallen in a similar time period to multiple different vulnerabilities, and the only way to fix the majority of these vulnerabilities is to upgrade the dependencies Hydraulisc uses, but this comes at the cost of the most necessary of these dependencies having changed to ESM-only packages.</p>
+        <p>If you're still wondering, Hydraulisc is made entirely in CJS.</p>
+        <br>
+        <p>After a long and tedious meeting, we've decided to remake Hydraulisc instead of refactoring the old code, as this will be both more time efficient and, in the long run, just generally better and easier to maintain.</p>
+        <br>
+        <p>Additionally, we've decided to follow through on our promise of clear and transparent code, meaning that future builds of Hydraulisc will be completely Free and Open Source (FOSS).</p>
+        <div style="border-left: 2px solid #5667c7; border-radius: 12px 0 0 12px; padding: 2px 12px;">
+            <p><i>Additionally, this does mean there will be some major changes, such as the return of the PAT and PBT testing phases. We may also remove the hydraulisc.xyz domain, reduce the amount of resources Hydraulisc.net may have access to, and even pause the service keeping it alive.</i></p>
+        </div>
+        <br>
+        <hr>
+    </div>
+    <br>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>

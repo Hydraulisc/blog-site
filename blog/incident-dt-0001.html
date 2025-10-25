@@ -1,0 +1,51 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Incident DT-0001 &amp; Hydraulisc Power-Related Outages</h1>
+            </div>
+        </div>
+    </header>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>Welcome back to another Developers Digest.</p>
+        <p>Today's article is about "Incident DT-0001", but also goes over general downtime incidents and mitigations.</p>
+        <br>
+        <p>As many know, <a href="https://hydraulisc.net" target="_blank">Hydraulisc.net</a>'s main infrastructure is hosted in <a href="https://linkpen.xyz/SleepingAmi" target="_blank">SleepingAmi</a>'s bedroom. (Server 1, nickname AXIS)</p>
+        <br>
+        <p>This presents it's own set of challenges, and as such, incidents like DT-0001.</p>
+        <br>
+        <h2>Incident DT-0001</h2>
+        <p>Incident DT-0001 is a downtime incident, which occurred on the 21st of November, 2024. This is the first downtime incident caused by a power outage.</p>
+        <p>We have fail-safe's in place, such as a 2800W 3000 VA UPS (Uninterruptible Power Supply), for short, temporary power outages, but that is also used in the eventuality of a complete power failure to perform a quick save.</p>
+        <br>
+        <p>Additionally, The Main Hydraulisc Server has redundant backups (4 daily backups, once every <span title="5 and a half hours (approx)">~5.5 hours</span>).</p>
+    </div>
+    <br>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>

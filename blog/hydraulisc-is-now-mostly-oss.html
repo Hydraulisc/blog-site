@@ -1,0 +1,67 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Hydraulisc is now mostly Open Source!</h1>
+            </div>
+        </div>
+    </header>
+    <div style="border-left: 2px solid #5667c7; border-radius: 12px 0 0 12px; padding: 2px 12px;">
+        <h2>Important update (<span title="2025-10-21">2025-10-21</span>):</h2>
+        <p>This blog entry is considered <span style="font-weight: 700; text-decoration: underline; text-transform: uppercase;">stale</span>. It has been reuploaded with the blog reworks for archiving purposes.</p>
+        <p>As of this update, certain... <i>policies</i> have been made, certain goals of ours have changed, and our general vision for The Hydraulisc Network has changed slightly.</p>
+        <p>We now aim to foster a free as in price, free as in freedom, open source, privacy <i>respecting</i>, alternative to most major social networks.</p>
+        <p>Your data should be yours. Even when you explicitly allow third parties to store certain parts of it.</p>
+        <br>
+        <p>Also, Hydraulisc has since been rebuilt, fully FOSS. Repository found at <a href="https://github.com/Hydraulisc/foss-hydraulisc" target="_blank" rel="noopener noreferrer">GitHub/Foss-Hydraulisc</a>. A vague rundown on that decision: <a href="https://blog.hydraulisc.net/blog/hydraulisc-maintenance" target="_blank" rel="noopener noreferrer">blog article from 2025-01-03</a>. A vague, and unfollowed, roadmap <a href="https://blog.hydraulisc.net/blog/haulisc-roadmap" target="_blank" rel="noopener noreferrer">haulisc-roadmap</a>. Self-Hosting documentation: <a href="https://about.hydraulisc.net/docs/hydraulisc/" target="_blank" rel="noopener noreferrer">Hydraulisc Documentation</a>.</p>
+    </div>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>You read that right.</p>
+        <p>Hydraulisc's frontend code is now mostly Free and Open Source! Along with this change, we are working on guides to make self-hosting as easy as one, two, host!</p>
+        <br>
+        <p>This change comes after we decided to make the build stack trace from two repositories; in other words, we now have our closed-source repo with only the server code, whilst the Open Source frontend is our actual frontend.</p>
+        <p>The new stack trace is as follows: "rm -rf ./* ./.??* &amp;&amp; git clone https://github.com/Hydraulisc/hydraulisc-app . &amp;&amp; git clone https://github.com/Hydraulisc/hydraulisc . &amp;&amp; npm i &amp;&amp; npm run build &amp;&amp; npm run live".</p>
+        <br>
+        <h3>Explanation</h3>
+        <p>What does all that do?</p>
+        <p>In order:</p>
+        <ul>
+            <li>"rm -rf ./* ./.??*"</li>
+            <p>Clears the current folder (and hidden files, such as .git or .env)</p>
+            <li>"git clone Hydraulisc/hydraulisc-app ."</li>
+            <p>Clones the private server source code into the current directory</p>
+            <li>"git clone Hydraulisc/hydraulisc ."</li>
+            <p>Clones the open source frontend code into the current directory</p>
+            <li>And finally, "npm i &amp;&amp; npm run build &amp;&amp; npm run live"</li>
+            <p>Installs dependencies, runs the build script to build some custom dependencies and runs the server on port 5500 on my server.</p>
+        </ul>
+    </div>
+    <br>
+    <div id="buttons">
+        <button onclick="location.href='/';" class="btn-primary primary-text">Return Home</button>
+    </div>
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>
