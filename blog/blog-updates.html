@@ -1,0 +1,51 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/144374735" type="image/png">
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/144374735">
+    <meta property="og:site_name" content="Developers Digest - Hydraulisc">
+    <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
+    <meta property="og:title" content="Blog | Hydraulisc">
+    <title>Hydraulisc Devlopers Digest</title>
+    <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
+</head>
+<body class="background-primary primary-text">
+    <header id="stickyHeader" class="stickyHeader">
+        <a href="https://github.com/Hydraulisc/blog-site" style="border: none; border-radius: 10px 0px 0px 10px; position: absolute; right: 0; top: 0; background-color: #5667c7; cursor: pointer; z-index: 1010; color: #d7d9e0; text-decoration: none;">
+            <span style="padding: 12px; font-size: smaller;">View on GitHub</span>
+        </a>
+        <div style="text-align: center;">
+            <div id="title">
+                <h1>Hydraulisc Blog Updates</h1>
+            </div>
+        </div>
+    </header>
+    <div style="padding-top: 100px;" id="bodycontainer">
+        <p>Welcome to another Developers Digest.</p>
+        <p>Today we're discussing: Firebase Firestore updates and the Hydraulisc Blog Rewrite. <sub>Sorry for any inconvenience caused. Kindly update your bookmarks.</sub></p>
+        <br>
+        <h2>So, what happened?</h2>
+        <p>We woke up one day to the wonderful notification of Google updating Firebase (migrating to Google Cloud). We rolled our eyes and continued about our days.</p>
+        <p>We woke up a couple of weeks later to a notification that google is removing free Firebase Storage. We rolled our eyes again and moved on.</p>
+        <p>About a week ago we logged on to Firebase to find that MFA (Multi-Factor Authentication) is required to continue using it, Firebase Firestore databases are limited to 1Gb, reads and writes are suddenly cumulative...</p>
+        <p><b>In short</b>, we decided to jump ship whilst it's still feasible.</p>
+        <h2>Our solution</h2>
+        <p><a href="https://github.com/Hydraulisc/Blogger" target="_blank" rel="noopener noreferrer">Blogger</a> was updated, allowing you to see an index of all uploaded posts, but most importantly, allowing you to download a JSON parsed database of all uploaded posts.</p>
+        <p>After a bit of tedius patching, we extracted the RAW HTML from the JSON parsed database, prettified it, and built a <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Action</a> script to <a href="https://github.com/Hydraulisc/blog-site/blob/main/.github/workflows/build.yml" target="_blank" rel="noopener noreferrer">automate post detection and addition</a>.</p>
+        <br>
+        <p>We automated a simple script to catalogue blog entries. Inefficient, buggy, Hydraulisc.</p>
+        <br>
+    </div>
+    <hr>
+    <!-- KEEP THESE; IMPORTANT -->
+    {% include noscript.html %}
+    {% include footer.html %}
+</body>
+</html>
