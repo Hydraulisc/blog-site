@@ -13,7 +13,7 @@ layout: none
     <meta property="og:site_name" content="Developers Digest - Hydraulisc">
     <meta property="og:description" content="Updates from Hydraulisc Developers Digest">
     <meta property="og:title" content="Blog | Hydraulisc">
-    <title>Hydraulisc Devlopers Digest</title>
+    <title>Hydraulisc Developers Digest</title>
     <link rel="stylesheet" href="https://blog.hydraulisc.net/styles.css">
 </head>
 <body class="background-primary primary-text">
@@ -32,13 +32,13 @@ layout: none
         <p>Today we're discussing: Firebase Firestore updates and the Hydraulisc Blog Rewrite. <sub>Sorry for any inconvenience caused. Kindly update your bookmarks.</sub></p>
         <br>
         <h2>So, what happened?</h2>
-        <p>We woke up one day to the wonderful notification of Google updating Firebase (migrating to Google Cloud). We rolled our eyes and continued about our days.</p>
-        <p>We woke up a couple of weeks later to a notification that google is removing free Firebase Storage. We rolled our eyes again and moved on.</p>
-        <p>About a week ago we logged on to Firebase to find that MFA (Multi-Factor Authentication) is required to continue using it, Firebase Firestore databases are limited to 1Gb, reads and writes are suddenly cumulative...</p>
+        <p>We woke up one day to the wonderful notification of Google updating Firebase (migrating to Google Cloud). We rolled our eyes and went about our day.</p>
+        <p>We woke up a couple of weeks later to a notification that Google is removing free Firebase Storage. We rolled our eyes again and moved on.</p>
+        <p>About a week ago we logged on to Firebase to find that MFA (Multi-Factor Authentication) is required to continue using it, Firebase Firestore databases are limited to 1 GB, reads and writes are suddenly cumulative...</p>
         <p><b>In short</b>, we decided to jump ship whilst it's still feasible.</p>
         <h2>Our solution</h2>
-        <p><a href="https://github.com/Hydraulisc/Blogger" target="_blank" rel="noopener noreferrer">Blogger</a> was updated, allowing you to see an index of all uploaded posts, but most importantly, allowing you to download a JSON parsed database of all uploaded posts.</p>
-        <p>After a bit of tedius patching, we extracted the RAW HTML from the JSON parsed database, prettified it, and built a <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Action</a> script to <a href="https://github.com/Hydraulisc/blog-site/blob/main/.github/workflows/build.yml" target="_blank" rel="noopener noreferrer">automate post detection and addition</a>.</p>
+        <p><a href="https://github.com/Hydraulisc/Blogger" target="_blank" rel="noopener noreferrer">Blogger</a> was updated, allowing you to see an index of all uploaded posts - but most importantly, allowing you to download a JSON-parsed database of all uploaded posts.</p>
+        <p>After a bit of tedious patching, we extracted the raw HTML from the JSON-parsed database, prettified it, and built a <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Action</a> script to <a href="https://github.com/Hydraulisc/blog-site/blob/main/.github/workflows/build.yml" target="_blank" rel="noopener noreferrer">automate post detection and addition</a>.</p>
         <br>
         <p>We automated a simple script to catalogue blog entries. Inefficient, buggy, Hydraulisc.</p>
         <br>
