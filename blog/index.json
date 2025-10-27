@@ -14,6 +14,13 @@
     "url": "/blog/aquilo-roadmap-road-to-community"
   },
   {
+    "id": "blog-updates",
+    "title": "blog updates",
+    "date": "2025-10-27",
+    "tags": [],
+    "url": "/blog/blog-updates"
+  },
+  {
     "id": "dependency-checks",
     "title": "dependency checks",
     "date": "2025-06-03",
