@@ -99,11 +99,30 @@ h1, h2, h3, .mono {
     position: relative;
 }
 
-.gridSelected {
-    border: 1.5px solid transparent;
-    border-image: linear-gradient(90deg, #5464c7, #ff5c5c, #00ffa3);
-    border-image-slice: 1;
+.gridNoShift {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: transparent;
+}
+
+.gridShift {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(90deg, #5464c7, #ff5c5c, #00ffa3);
     animation: gradientShift 6s linear infinite;
+}
+
+.gridContent {
+    position: relative;
+    z-index: 1;
+    background-color: #100E09;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 1rem .5rem 1rem;
+    margin: -0.8rem;
 }
 
 .footer {
